@@ -1,4 +1,4 @@
-package com.hcl.got.ui.home
+package com.hcl.got.ui.characters
 
 import android.os.Bundle
 import android.view.LayoutInflater

@@ -52,6 +52,8 @@ android {
     testOptions {
         unitTests.isReturnDefaultValues = true
         unitTests.isIncludeAndroidResources = true
+        animationsDisabled = true
+
     }
 
 }
@@ -80,6 +82,7 @@ dependencies {
 
     //Dagger
     implementation("com.google.dagger:hilt-android:2.48")
+    implementation("androidx.test.espresso:espresso-contrib:3.5.1")
     kapt("com.google.dagger:hilt-android-compiler:2.48")
 
     // retrofit

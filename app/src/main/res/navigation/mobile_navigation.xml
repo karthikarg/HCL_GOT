@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.hcl.got.ui.home.CharactersFragment"
+        android:name="com.hcl.got.ui.characters.CharactersFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 

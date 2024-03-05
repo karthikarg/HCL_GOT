@@ -1,7 +1,6 @@
-package com.hcl.got.ui.home
+package com.hcl.got.ui.characters
 
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.hcl.got.data.model.CharactersData
 import com.hcl.got.databinding.ListItemCharactersBinding

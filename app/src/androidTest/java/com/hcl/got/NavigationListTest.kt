@@ -1,13 +1,13 @@
 package com.hcl.got
 
-import android.view.View
 import androidx.annotation.UiThread
 import androidx.recyclerview.widget.RecyclerView
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
+import androidx.test.espresso.action.ViewActions.swipeDown
 import androidx.test.espresso.assertion.ViewAssertions.matches
-import androidx.test.espresso.matcher.BoundedMatcher
-import androidx.test.espresso.matcher.ViewMatchers.hasDescendant
+import androidx.test.espresso.contrib.RecyclerViewActions
+import androidx.test.espresso.matcher.ViewMatchers.hasChildCount
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withContentDescription
 import androidx.test.espresso.matcher.ViewMatchers.withId
@@ -18,9 +18,7 @@ import androidx.test.platform.app.InstrumentationRegistry
 import org.junit.Assert.*
 import org.junit.Rule
 import org.junit.Test
-import org.junit.runner.Description
 import org.junit.runner.RunWith
-import java.util.regex.Matcher
 
 
 /**
@@ -29,7 +27,7 @@ import java.util.regex.Matcher
  * See [testing documentation](http://d.android.com/tools/testing).
  */
 @RunWith(AndroidJUnit4::class)
-class ExampleInstrumentedTest {
+class NavigationListTest {
 
     @get:Rule
     val activityRule = ActivityScenarioRule(MainActivity::class.java)
@@ -62,23 +60,60 @@ class ExampleInstrumentedTest {
 
     @Test
     @UiThread
-    fun homeViewCheck() {
+    fun CheckLeftListLastItemCheck() {
 
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
 
-       Thread.sleep(60000)
+        onView(withContentDescription(appContext.getString(R.string.navigation_drawer_open))).perform(click());
 
-       /* onView(withId(R.id.bookNameTextView))
+        onView(withId(R.id.recyclerView))
             .check(matches(isDisplayed()))
 
-        onView(withId(R.id.charactersTextView))
-            .check(matches(isDisplayed()))*/
+        onView(withId(R.id.recyclerView)).perform(swipeDown())
 
-        onView(withId(R.id.charactersRecyclerView))
-            .check(matches(isDisplayed()))
+        onView(withText("The Rogue Prince")).check(matches(isDisplayed()))
 
     }
 
+
+    @Test
+    @UiThread
+    fun CheckLeftListItemCountCheck() {
+
+        val appContext = InstrumentationRegistry.getInstrumentation().targetContext
+
+        onView(withContentDescription(appContext.getString(R.string.navigation_drawer_open))).perform(click());
+
+        onView(withId(R.id.recyclerView))
+            .check(matches(isDisplayed()))
+
+        onView(withId(R.id.recyclerView)).perform(swipeDown())
+
+
+        onView(withId(R.id.recyclerView)).check(matches(hasChildCount(10)))
+
+
+        onView(withId(R.id.recyclerView))
+            .perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(2, click()))
+    }
+
+
+    @Test
+    @UiThread
+    fun CheckLeftListItemClickCheck() {
+
+        val appContext = InstrumentationRegistry.getInstrumentation().targetContext
+
+        onView(withContentDescription(appContext.getString(R.string.navigation_drawer_open))).perform(click());
+
+        onView(withId(R.id.recyclerView))
+            .check(matches(isDisplayed()))
+
+        onView(withId(R.id.recyclerView)).perform(swipeDown())
+
+        onView(withId(R.id.recyclerView))
+            .perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(2, click()))
+    }
 
 
 }

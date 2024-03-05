@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.hcl.got.databinding.ActivityMainBinding
 import com.hcl.got.ui.adapters.BooksAdapter
-import com.hcl.got.ui.home.CharactersFragment
+import com.hcl.got.ui.characters.CharactersFragment
 import com.hcl.got.viewmodels.GOTBooksViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch

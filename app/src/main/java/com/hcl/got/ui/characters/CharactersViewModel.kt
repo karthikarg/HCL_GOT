@@ -1,4 +1,4 @@
-package com.hcl.got.ui.home
+package com.hcl.got.ui.characters
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.hcl.got.data.model.CharactersData
 import com.hcl.got.repos.GOTRepository
-import com.hcl.got.ui.utils.getCharacterId
 import com.hcl.got.ui.utils.getCharacterIdList
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
