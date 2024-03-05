@@ -2,6 +2,38 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
+      <entry key="CheckLeftListItemCheck()">
+        <State>
+          <runningDeviceTargetSelectedWithDropDown>
+            <Target>
+              <type value="RUNNING_DEVICE_TARGET" />
+              <deviceKey>
+                <Key>
+                  <type value="SERIAL_NUMBER" />
+                  <value value="72f5252d" />
+                </Key>
+              </deviceKey>
+            </Target>
+          </runningDeviceTargetSelectedWithDropDown>
+          <timeTargetWasSelectedWithDropDown value="2024-03-04T19:12:32.246219400Z" />
+        </State>
+      </entry>
+      <entry key="ChracterListViewCheck()">
+        <State>
+          <targetSelectedWithDropDown>
+            <Target>
+              <type value="QUICK_BOOT_TARGET" />
+              <deviceKey>
+                <Key>
+                  <type value="VIRTUAL_DEVICE_PATH" />
+                  <value value="C:\Users\Vanitha\.android\avd\Pixel_7_API_30.avd" />
+                </Key>
+              </deviceKey>
+            </Target>
+          </targetSelectedWithDropDown>
+          <timeTargetWasSelectedWithDropDown value="2024-03-04T20:29:39.294762100Z" />
+        </State>
+      </entry>
       <entry key="app">
         <State>
           <targetSelectedWithDropDown>
@@ -24,7 +56,7 @@
       <entry key="homeViewCheck() (1)">
         <State />
       </entry>
-      <entry key="useAppContext()">
+      <entry key="toolBarClickCheck()">
         <State>
           <targetSelectedWithDropDown>
             <Target>
@@ -37,7 +69,7 @@
               </deviceKey>
             </Target>
           </targetSelectedWithDropDown>
-          <timeTargetWasSelectedWithDropDown value="2024-03-02T19:17:36.081893200Z" />
+          <timeTargetWasSelectedWithDropDown value="2024-03-04T18:33:05.016843700Z" />
         </State>
       </entry>
     </value>

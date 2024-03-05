@@ -56,6 +56,7 @@ android {
 
 }
 
+
 // Allow references to generated code
 kapt {
     correctErrorTypes = true
@@ -96,6 +97,7 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    androidTestImplementation("androidx.test:runner:1.4.0")
 
     //MockWebserver
     testImplementation("com.squareup.okhttp3:mockwebserver:4.9.1")
@@ -104,3 +106,4 @@ dependencies {
 
 
 }
+

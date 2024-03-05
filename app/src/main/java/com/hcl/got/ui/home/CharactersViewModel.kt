@@ -27,7 +27,6 @@ class CharactersViewModel @Inject constructor(val gotRepository: GOTRepository) 
 
     fun setUrlList(list : List<String>){
         charactersUrlList = list
-        println("List - total ${charactersUrlList.size}")
 
     }
 
@@ -41,7 +40,6 @@ class CharactersViewModel @Inject constructor(val gotRepository: GOTRepository) 
     fun getCharacters(list: List<String>){
 
         val multipleIds = getCharacterIdList(list)
-        println("List - id $multipleIds")
         viewModelScope.launch {
             withContext(Dispatchers.IO) {
                 val content = mutableListOf<CharactersData>()

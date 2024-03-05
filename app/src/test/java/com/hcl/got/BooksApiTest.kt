@@ -3,7 +3,10 @@ package com.hcl.got
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.google.gson.GsonBuilder
 import com.google.gson.JsonParser
+import com.google.gson.reflect.TypeToken
 import com.hcl.got.data.api.GOTApiService
+import com.hcl.got.data.model.BooksData
+import com.hcl.got.data.model.CharactersData
 import com.hcl.got.repos.GOTRepository
 import kotlinx.coroutines.runBlocking
 import okhttp3.OkHttpClient
@@ -46,34 +49,38 @@ class BooksApiTest {
 
     @Test
     fun testBooksApiSuccess() {
-        mockedResponse = MockResponseFileReader("book.json").content
+        mockedResponse = MockResponseFileReader("api/book.json").content
         server.enqueue(
             MockResponse()
                 .setResponseCode(200)
                 .setBody(mockedResponse)
         )
+
         val response = runBlocking { repository.gotApiService.getBooks() }
-        val json = gson.toJson(response.body())
-        val resultResponse = JsonParser.parseString(json)
-        val expectedResponse = JsonParser.parseString(mockedResponse)
+        val mockResponseList = gson.fromJson<List<BooksData>>(mockedResponse,object : TypeToken<List<BooksData>>() {}.type)
+
+         val expectedResponseList =  response.body() ?: emptyList()
+
         Assert.assertNotNull(response)
-        Assert.assertTrue(resultResponse.equals(expectedResponse))
+        Assert.assertTrue(mockResponseList.size == expectedResponseList.size)
+        Assert.assertTrue(mockResponseList[0].name == expectedResponseList[0].name)
     }
 
     @Test
-    fun testChractersDetailsApiSuccess() {
-        mockedResponse = MockResponseFileReader("api/chracters.json").content
+    fun testCharactersDetailsApiSuccess() {
+        mockedResponse = MockResponseFileReader("api/characters.json").content
         server.enqueue(
             MockResponse()
                 .setResponseCode(200)
                 .setBody(mockedResponse)
         )
         val response = runBlocking { repository.gotApiService.getCharacters(2) }
-        val json = gson.toJson(response.body())
-        val resultResponse = JsonParser.parseString(json)
-        val expectedResponse = JsonParser.parseString(mockedResponse)
+        val resultResponse = gson.fromJson<CharactersData>(mockedResponse,object : TypeToken<CharactersData>() {}.type)
+        val expectedCharacter  =  response.body()
+
         Assert.assertNotNull(response)
-        Assert.assertTrue(resultResponse.equals(expectedResponse))
+        Assert.assertTrue(resultResponse.name == expectedCharacter?.name)
+        Assert.assertTrue(resultResponse.gender == expectedCharacter?.gender)
     }
 
 

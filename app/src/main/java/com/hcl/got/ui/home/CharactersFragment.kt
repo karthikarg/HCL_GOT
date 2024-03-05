@@ -6,9 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.RecyclerView
 import com.hcl.got.data.model.CharactersData
 import com.hcl.got.databinding.FragmentHomeBinding
-import com.hcl.got.ui.utils.EndlessScrollListener
 import com.hcl.got.ui.utils.gone
 import com.hcl.got.ui.utils.visible
 import dagger.hilt.android.AndroidEntryPoint
@@ -20,7 +20,7 @@ class CharactersFragment : Fragment() {
     companion object {
         const val KEY_CHARACTERS_LIST = "characters_list"
         const val KEY_BOOK_NAME = "selected_book_name"
-        fun newInstance(bookName : String, charList: List<String>): CharactersFragment {
+        fun newInstance(bookName: String, charList: List<String>): CharactersFragment {
             val fragment = CharactersFragment()
             val args = Bundle()
             args.putStringArrayList(KEY_CHARACTERS_LIST, ArrayList(charList))
@@ -30,7 +30,6 @@ class CharactersFragment : Fragment() {
         }
     }
 
-    private var currentPage = 0
     private val PAGE_LIMIT = 15
 
     private lateinit var charactersAdapter: CharactersAdapter
@@ -45,7 +44,7 @@ class CharactersFragment : Fragment() {
     private val binding get() = _binding!!
 
     var isLastPage = false
-    var page = 0
+    var isLoading = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -63,10 +62,11 @@ class CharactersFragment : Fragment() {
         }
 
         /**Getting Book name from bundle*/
-        binding.bookNameTextView.text = "Book : " + arguments?.getString(KEY_BOOK_NAME)
+        binding.bookNameTV.text = "Book : " + arguments?.getString(KEY_BOOK_NAME)
 
         homeViewModel.charactersDataLiveData.observe(viewLifecycleOwner) {
             binding.progressBar.gone()
+            isLoading = false
             it?.let {
                 characterList.addAll(it)
                 charactersAdapter.setListItems(it)
@@ -75,12 +75,17 @@ class CharactersFragment : Fragment() {
         }
 
         setAdapter()
-        fetchItems(currentPage, PAGE_LIMIT)
+        fetchItems()
 
-        binding.charactersRecyclerView.addOnScrollListener(object : EndlessScrollListener() {
-            override fun onLoadMore(page: Int) {
-                println("SIZE:-----")
-                fetchItems(page, PAGE_LIMIT)
+
+        // Implement load more
+        binding.charactersRecyclerView.addOnScrollListener(object :
+            RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+                if (!recyclerView.canScrollVertically(1)) {
+                    fetchItems()
+                }
             }
         })
 
@@ -88,31 +93,26 @@ class CharactersFragment : Fragment() {
     }
 
     /**Setting characters adapter*/
-    private fun setAdapter()
-    {
+    private fun setAdapter() {
         charactersAdapter = CharactersAdapter()
         binding.charactersRecyclerView.adapter = charactersAdapter
 
     }
 
-    private fun fetchItems(page: Int, limit: Int) {
-        binding.progressBar.visible()
-        val last = if (homeViewModel.getUrlList().size < characterList.size + limit)
-            homeViewModel.getUrlList().size
-        else
-            characterList.size + limit
+    private fun fetchItems() {
 
-        val list = homeViewModel.getUrlList().subList(characterList.size, last)
+        if (!isLoading && !isLastPage) {
+            binding.progressBar.visible()
+            val last = if (homeViewModel.getUrlList().size < characterList.size + PAGE_LIMIT)
+                homeViewModel.getUrlList().size
+            else
+                characterList.size + PAGE_LIMIT
 
-        homeViewModel.getCharacters(list)
-        println("PAGE :----- $page")
-        println("PAGE :----- ${list.size}")
-        println("PAGE :----- ${characterList.size}")
-        println("PAGE :----- ")
+            val list = homeViewModel.getUrlList().subList(characterList.size, last)
 
-
-        /*characterList.addAll()
-        charactersAdapter.setListItems(characterList)*/
+            homeViewModel.getCharacters(list)
+            isLoading = true
+        }
 
     }
 

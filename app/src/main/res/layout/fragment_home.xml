@@ -8,7 +8,7 @@
 
 
     <TextView
-        android:id="@+id/bookNameTextView"
+        android:id="@+id/bookNameTV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="12dp"
@@ -24,7 +24,7 @@
         tools:text="Name" />
 
     <TextView
-        android:id="@+id/charactersTextView"
+        android:id="@+id/charactersTV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="12dp"
@@ -37,7 +37,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bookNameTextView"
+        app:layout_constraintTop_toBottomOf="@+id/bookNameTV"
         tools:text="Characters" />
 
 
@@ -53,7 +53,7 @@
         android:layout_height="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/charactersTextView"
+        app:layout_constraintTop_toBottomOf="@+id/charactersTV"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:ignore="MissingConstraints" />
 

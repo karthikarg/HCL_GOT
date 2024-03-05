@@ -3,6 +3,33 @@
   <component name="AndroidTestResultsUserPreferences">
     <option name="androidTestResultsTableState">
       <map>
+        <entry key="-2103307427">
+          <value>
+            <AndroidTestResultsTableState>
+              <option name="preferredColumnWidths">
+                <map>
+                  <entry key="Duration" value="102" />
+                  <entry key="Pixel_7_API_30" value="120" />
+                  <entry key="Tests" value="371" />
+                  <entry key="Xiaomi M2101K6P" value="131" />
+                </map>
+              </option>
+            </AndroidTestResultsTableState>
+          </value>
+        </entry>
+        <entry key="-2043595058">
+          <value>
+            <AndroidTestResultsTableState>
+              <option name="preferredColumnWidths">
+                <map>
+                  <entry key="Duration" value="90" />
+                  <entry key="Tests" value="360" />
+                  <entry key="Xiaomi M2101K6P" value="120" />
+                </map>
+              </option>
+            </AndroidTestResultsTableState>
+          </value>
+        </entry>
         <entry key="-276031267">
           <value>
             <AndroidTestResultsTableState>
@@ -11,6 +38,7 @@
                   <entry key="Duration" value="90" />
                   <entry key="Pixel_7_API_30" value="120" />
                   <entry key="Tests" value="360" />
+                  <entry key="Xiaomi M2101K6P" value="120" />
                 </map>
               </option>
             </AndroidTestResultsTableState>
@@ -23,6 +51,19 @@
                 <map>
                   <entry key="Duration" value="90" />
                   <entry key="Pixel_7_API_30" value="120" />
+                  <entry key="Tests" value="360" />
+                  <entry key="Xiaomi M2101K6P" value="120" />
+                </map>
+              </option>
+            </AndroidTestResultsTableState>
+          </value>
+        </entry>
+        <entry key="437399856">
+          <value>
+            <AndroidTestResultsTableState>
+              <option name="preferredColumnWidths">
+                <map>
+                  <entry key="Duration" value="90" />
                   <entry key="Tests" value="360" />
                   <entry key="Xiaomi M2101K6P" value="120" />
                 </map>
