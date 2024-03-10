@@ -11,6 +11,7 @@ import com.hcl.got.data.model.CharactersData
 import com.hcl.got.databinding.FragmentHomeBinding
 import com.hcl.got.ui.utils.gone
 import com.hcl.got.ui.utils.visible
+import com.hcl.got.utils.Status
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -65,13 +66,21 @@ class CharactersFragment : Fragment() {
         binding.bookNameTV.text = "Book : " + arguments?.getString(KEY_BOOK_NAME)
 
         homeViewModel.charactersDataLiveData.observe(viewLifecycleOwner) {
-            binding.progressBar.gone()
-            isLoading = false
-            it?.let {
-                characterList.addAll(it)
-                charactersAdapter.setListItems(it)
-                isLastPage = characterList.size == homeViewModel.getUrlList().size
+
+            when(it.status){
+                Status.SUCCESS ->  {
+                    binding.progressBar.gone()
+                    isLoading = false
+                    it.data?.let { list->
+                        characterList.addAll(list)
+                        charactersAdapter.setListItems(list)
+                        isLastPage = characterList.size == homeViewModel.getUrlList().size
+                    }
+                }
+                Status.ERROR -> {}
+                Status.LOADING -> {}
             }
+
         }
 
         setAdapter()

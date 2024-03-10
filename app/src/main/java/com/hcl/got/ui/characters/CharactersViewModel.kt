@@ -6,7 +6,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.hcl.got.data.model.CharactersData
 import com.hcl.got.repos.GOTRepository
-import com.hcl.got.ui.utils.getCharacterIdList
+import com.hcl.got.utils.getCharacterIdList
+import com.hcl.got.utils.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
@@ -20,8 +21,8 @@ import javax.inject.Inject
 class CharactersViewModel @Inject constructor(val gotRepository: GOTRepository) : ViewModel() {
 
     private var charactersUrlList = emptyList<String>()
-    private val _charactersDataLiveData = MutableLiveData<List<CharactersData>>()
-    val charactersDataLiveData: LiveData<List<CharactersData>> = _charactersDataLiveData
+    private val _charactersDataLiveData = MutableLiveData<Resource<List<CharactersData>>>()
+    val charactersDataLiveData: LiveData<Resource<List<CharactersData>>> = _charactersDataLiveData
 
 
     fun setUrlList(list : List<String>){
@@ -60,7 +61,7 @@ class CharactersViewModel @Inject constructor(val gotRepository: GOTRepository) 
                     }
                 }
 
-                _charactersDataLiveData.postValue(content)
+                _charactersDataLiveData.postValue(Resource.success(content))
             }
         }
     }

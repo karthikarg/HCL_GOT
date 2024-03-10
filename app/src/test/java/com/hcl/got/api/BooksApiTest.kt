@@ -1,9 +1,9 @@
-package com.hcl.got
+package com.hcl.got.api
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.google.gson.GsonBuilder
-import com.google.gson.JsonParser
 import com.google.gson.reflect.TypeToken
+import com.hcl.got.MockResponseFileReader
 import com.hcl.got.data.api.GOTApiService
 import com.hcl.got.data.model.BooksData
 import com.hcl.got.data.model.CharactersData

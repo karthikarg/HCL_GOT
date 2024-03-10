@@ -15,6 +15,7 @@ import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
+import com.hcl.got.ui.activity.MainActivity
 import org.junit.Assert.*
 import org.junit.Rule
 import org.junit.Test
@@ -43,6 +44,7 @@ class NavigationListTest {
             .check(matches(isDisplayed()))
 
     }
+
     @Test
     @UiThread
     fun CheckLeftListItemCheck() {
@@ -64,7 +66,7 @@ class NavigationListTest {
 
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
 
-        onView(withContentDescription(appContext.getString(R.string.navigation_drawer_open))).perform(click());
+        onView(withContentDescription(appContext.getString(R.string.navigation_drawer_open))).perform(click())
 
         onView(withId(R.id.recyclerView))
             .check(matches(isDisplayed()))
@@ -78,7 +80,7 @@ class NavigationListTest {
 
     @Test
     @UiThread
-    fun CheckLeftListItemCountCheck() {
+    fun checkLeftListItemCountCheck() {
 
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
 
@@ -100,7 +102,7 @@ class NavigationListTest {
 
     @Test
     @UiThread
-    fun CheckLeftListItemClickCheck() {
+    fun checkLeftListItemClickCheck() {
 
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
 

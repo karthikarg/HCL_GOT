@@ -4,7 +4,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.hcl.got.data.model.CharactersData
 import com.hcl.got.databinding.ListItemCharactersBinding
-import com.hcl.got.ui.utils.getListFirstItem
+import com.hcl.got.utils.getListFirstItem
 
 class CharactersAdapter : RecyclerView.Adapter<CharactersAdapter.MyViewHolder>() {
 

@@ -42,22 +42,6 @@ class GOTApplicationModule {
                 request.newBuilder().header("Cache-Control", "public, only-if-cached, max-stale=" + 60 * 60 * 24 * 7).build()
             chain.proceed(request)
 
-            /*val originalResponse = chain.proceed(chain.request())
-            val cacheControl = originalResponse.header("Cache-Control")
-            if (cacheControl == null || cacheControl.contains("no-store") || cacheControl.contains("no-cache") ||
-                cacheControl.contains("must-revalidate") || cacheControl.contains("max-age=0")
-            ) {
-                // No cache headers, skip caching
-                originalResponse
-            } else {
-                originalResponse.newBuilder()
-                    .removeHeader("Pragma")
-                    .removeHeader("Cache-Control")
-                    .header("Cache-Control", "public, only-if-cached, max-stale=" + 60 * 60 * 24 * 7)
-                    .build()
-            }
-
-        }*/
 
         }
         .build()
@@ -83,7 +67,7 @@ class GOTApplicationModule {
     @Singleton
     fun provideApiHelper(apiHelper: GOTApiHelperImpl): GOTApiHelper = apiHelper
 
-    private fun hasNetwork(context: Context): Boolean {
+    fun hasNetwork(context: Context): Boolean {
         val connectivityManager =
             context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val network = connectivityManager.activeNetwork ?: return false

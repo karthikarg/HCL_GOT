@@ -14,9 +14,7 @@ interface GOTApiService {
     suspend fun getBooks(): Response<List<BooksData>>
 
     @GET("characters/{id}")
-    suspend fun getCharacters(
-                              @Path("id") id: Int
+    suspend fun getCharacters(@Path("id") id: Int
     ): Response<CharactersData>
 }
 
-//@Header("Cache-Control") age: String= "public, only-if-cached, max-stale=2419200",

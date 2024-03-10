@@ -7,17 +7,12 @@ import dagger.hilt.android.HiltAndroidApp
 @HiltAndroidApp
 class GOTApplication : Application() {
 
-    override fun onCreate() {
-        super.onCreate()
-
-    }
-
     init {
-        instance = this
+        GOTApplication.instance = this
     }
 
     companion object {
-        private var instance: GOTApplication? = null
+        var instance: GOTApplication? = null
 
         fun applicationContext() : Context {
             return instance!!.applicationContext

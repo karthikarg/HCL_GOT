@@ -4,6 +4,7 @@ import androidx.annotation.UiThread
 import androidx.recyclerview.widget.RecyclerView
 import androidx.test.core.app.ActivityScenario
 import androidx.test.espresso.Espresso
+import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.contrib.RecyclerViewActions
 import androidx.test.espresso.matcher.ViewMatchers
@@ -12,6 +13,8 @@ import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import androidx.test.platform.app.InstrumentationRegistry
+import com.hcl.got.ui.activity.MainActivity
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -54,7 +57,7 @@ class CharacterFragmentTest {
 
     @Test
     @UiThread
-    fun BookNametextviewVisibilityCheck() {
+    fun bookNametextviewVisibilityCheck() {
 
         ActivityScenario.launch(MainActivity::class.java)
             .onActivity { it.updateCharsView("Test",
@@ -66,28 +69,48 @@ class CharacterFragmentTest {
         Espresso.onView(ViewMatchers.withText("Book : Test"))
             .check(matches(isDisplayed()))
 
-
     }
 
     @Test
     @UiThread
-    fun CharacterListFirstItemCheck() {
+    fun characterListFirstItemCheck() {
 
         Thread.sleep(5000)
         Espresso.onView(ViewMatchers.withText("Name: Walder"))
             .check(matches(isDisplayed()))
 
-
     }
 
     @Test
     @UiThread
-    fun CharacterListScroolCheck() {
+    fun checkProgressBarVisibilityCheck() {
+
+        val appContext = InstrumentationRegistry.getInstrumentation().targetContext
+
+        Espresso.onView(ViewMatchers.withContentDescription(appContext.getString(R.string.navigation_drawer_open)))
+            .perform(ViewActions.click())
+
+        Espresso.onView(withId(R.id.recyclerView))
+            .check(matches(isDisplayed()))
+
+
+        Espresso.onView(withId(R.id.recyclerView))
+            .perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(2,
+                ViewActions.click()
+            ))
+
+        Espresso.onView(withId(R.id.progressBar))
+            .check(matches(isDisplayed()))
+    }
+
+    @Test
+    @UiThread
+    fun characterListScrollCheck() {
 
 
         Thread.sleep(5000)
         Espresso.onView(withId(R.id.charactersRecyclerView))
-            .perform(RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(14)); // Scrolls to the third item (position starts from 0)
+            .perform(RecyclerViewActions.scrollToPosition<RecyclerView.ViewHolder>(14))
 
         Thread.sleep(1000)
 
@@ -101,7 +124,7 @@ class CharacterFragmentTest {
 
     @Test
     @UiThread
-    fun CharacterListItemVisibiltyCheck() {
+    fun characterListItemVisibilityCheck() {
 
         Thread.sleep(5000)
         Espresso.onView(withId(R.id.charactersRecyclerView))

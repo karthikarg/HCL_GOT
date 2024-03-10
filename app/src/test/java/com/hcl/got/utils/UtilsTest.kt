@@ -1,8 +1,8 @@
-package com.hcl.got
+package com.hcl.got.utils
 
-import com.hcl.got.ui.utils.getCharacterId
-import com.hcl.got.ui.utils.getCharacterIdList
-import com.hcl.got.ui.utils.getListFirstItem
+import com.hcl.got.utils.getCharacterId
+import com.hcl.got.utils.getCharacterIdList
+import com.hcl.got.utils.getListFirstItem
 import junit.framework.TestCase.assertEquals
 import org.junit.Test
 

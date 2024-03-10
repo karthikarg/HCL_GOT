@@ -3,6 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     kotlin("kapt")
     id("com.google.dagger.hilt.android")
+
 }
 
 android {
@@ -21,6 +22,7 @@ android {
     }
 
 
+
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -32,6 +34,8 @@ android {
 
         debug {
             isMinifyEnabled = false
+            enableUnitTestCoverage = true
+            enableAndroidTestCoverage = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -49,6 +53,16 @@ android {
         viewBinding = true
         dataBinding = true
     }
+
+    sourceSets {
+        getByName("test") {
+            java.srcDir("src/test/java")
+        }
+        getByName("androidTest") {
+            java.srcDir("src/androidTest/java")
+        }
+    }
+
     testOptions {
         unitTests.isReturnDefaultValues = true
         unitTests.isIncludeAndroidResources = true
@@ -106,6 +120,11 @@ dependencies {
     testImplementation("com.squareup.okhttp3:mockwebserver:4.9.1")
     testImplementation("androidx.arch.core:core-testing:2.1.0")
     testImplementation("org.json:json:20180813")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.4.2")
+
+    testImplementation("org.mockito:mockito-core:5.11.0")
+    androidTestImplementation("org.mockito:mockito-android:5.11.0")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.8.0")
 
 
 }

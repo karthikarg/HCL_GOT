@@ -31,7 +31,33 @@
             </AndroidTestResultsTableState>
           </value>
         </entry>
+        <entry key="-1968536450">
+          <value>
+            <AndroidTestResultsTableState>
+              <option name="preferredColumnWidths">
+                <map>
+                  <entry key="Duration" value="90" />
+                  <entry key="Phone" value="120" />
+                  <entry key="Tests" value="360" />
+                </map>
+              </option>
+            </AndroidTestResultsTableState>
+          </value>
+        </entry>
         <entry key="-1942618650">
+          <value>
+            <AndroidTestResultsTableState>
+              <option name="preferredColumnWidths">
+                <map>
+                  <entry key="Duration" value="90" />
+                  <entry key="Phone" value="120" />
+                  <entry key="Tests" value="360" />
+                </map>
+              </option>
+            </AndroidTestResultsTableState>
+          </value>
+        </entry>
+        <entry key="-1887497238">
           <value>
             <AndroidTestResultsTableState>
               <option name="preferredColumnWidths">
@@ -71,7 +97,46 @@
             </AndroidTestResultsTableState>
           </value>
         </entry>
+        <entry key="-698197741">
+          <value>
+            <AndroidTestResultsTableState>
+              <option name="preferredColumnWidths">
+                <map>
+                  <entry key="Duration" value="99" />
+                  <entry key="Phone" value="128" />
+                  <entry key="Tests" value="369" />
+                </map>
+              </option>
+            </AndroidTestResultsTableState>
+          </value>
+        </entry>
         <entry key="-441938721">
+          <value>
+            <AndroidTestResultsTableState>
+              <option name="preferredColumnWidths">
+                <map>
+                  <entry key="Duration" value="90" />
+                  <entry key="Phone" value="120" />
+                  <entry key="Tests" value="360" />
+                </map>
+              </option>
+            </AndroidTestResultsTableState>
+          </value>
+        </entry>
+        <entry key="-324681239">
+          <value>
+            <AndroidTestResultsTableState>
+              <option name="preferredColumnWidths">
+                <map>
+                  <entry key="Duration" value="90" />
+                  <entry key="Phone" value="120" />
+                  <entry key="Tests" value="360" />
+                </map>
+              </option>
+            </AndroidTestResultsTableState>
+          </value>
+        </entry>
+        <entry key="-310268735">
           <value>
             <AndroidTestResultsTableState>
               <option name="preferredColumnWidths">
@@ -112,6 +177,19 @@
             </AndroidTestResultsTableState>
           </value>
         </entry>
+        <entry key="6805432">
+          <value>
+            <AndroidTestResultsTableState>
+              <option name="preferredColumnWidths">
+                <map>
+                  <entry key="Duration" value="90" />
+                  <entry key="Tests" value="360" />
+                  <entry key="Xiaomi M2101K6P" value="120" />
+                </map>
+              </option>
+            </AndroidTestResultsTableState>
+          </value>
+        </entry>
         <entry key="224292928">
           <value>
             <AndroidTestResultsTableState>
@@ -132,6 +210,19 @@
                 <map>
                   <entry key="Duration" value="90" />
                   <entry key="Phone" value="120" />
+                  <entry key="Tests" value="360" />
+                  <entry key="Xiaomi M2101K6P" value="120" />
+                </map>
+              </option>
+            </AndroidTestResultsTableState>
+          </value>
+        </entry>
+        <entry key="664958219">
+          <value>
+            <AndroidTestResultsTableState>
+              <option name="preferredColumnWidths">
+                <map>
+                  <entry key="Duration" value="90" />
                   <entry key="Tests" value="360" />
                   <entry key="Xiaomi M2101K6P" value="120" />
                 </map>
@@ -186,6 +277,19 @@
                   <entry key="Duration" value="90" />
                   <entry key="Phone" value="120" />
                   <entry key="Tests" value="360" />
+                </map>
+              </option>
+            </AndroidTestResultsTableState>
+          </value>
+        </entry>
+        <entry key="2054012632">
+          <value>
+            <AndroidTestResultsTableState>
+              <option name="preferredColumnWidths">
+                <map>
+                  <entry key="Duration" value="90" />
+                  <entry key="Tests" value="360" />
+                  <entry key="Xiaomi M2101K6P" value="120" />
                 </map>
               </option>
             </AndroidTestResultsTableState>

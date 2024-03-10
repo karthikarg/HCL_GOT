@@ -2,34 +2,6 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="BookNametextviewVisibilityCheck()">
-        <State />
-      </entry>
-      <entry key="CharacterListCountCheck()">
-        <State>
-          <targetSelectedWithDropDown>
-            <Target>
-              <type value="QUICK_BOOT_TARGET" />
-              <deviceKey>
-                <Key>
-                  <type value="VIRTUAL_DEVICE_PATH" />
-                  <value value="C:\Users\Vanitha\.android\avd\Phone.avd" />
-                </Key>
-              </deviceKey>
-            </Target>
-          </targetSelectedWithDropDown>
-          <timeTargetWasSelectedWithDropDown value="2024-03-05T13:04:30.756017200Z" />
-        </State>
-      </entry>
-      <entry key="CharacterListFirstItemCheck()">
-        <State />
-      </entry>
-      <entry key="CharacterListItemVisibiltyCheck()">
-        <State />
-      </entry>
-      <entry key="CharacterListScroolCheck()">
-        <State />
-      </entry>
       <entry key="app">
         <State>
           <targetSelectedWithDropDown>
@@ -45,6 +17,21 @@
           </targetSelectedWithDropDown>
           <timeTargetWasSelectedWithDropDown value="2024-03-02T19:18:31.561815800Z" />
         </State>
+      </entry>
+      <entry key="checkProgressBarVisibilityCheck()">
+        <State />
+      </entry>
+      <entry key="leftDrawerVisibilityCheck()">
+        <State />
+      </entry>
+      <entry key="testLiveDataObservers()">
+        <State />
+      </entry>
+      <entry key="testUpdateCharsView()">
+        <State />
+      </entry>
+      <entry key="testViewVisible()">
+        <State />
       </entry>
     </value>
   </component>
