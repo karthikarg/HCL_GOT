@@ -57,16 +57,17 @@ class CharacterFragmentTest {
 
     @Test
     @UiThread
-    fun bookNametextviewVisibilityCheck() {
+    fun bookNameTextviewVisibilityCheck() {
+
+        Thread.sleep(2000)
 
         ActivityScenario.launch(MainActivity::class.java)
-            .onActivity { it.updateCharsView("Test",
+            .onActivity { it.updateCharsView("A Game of Thrones",
                 listOf("https://www.anapioficeandfire.com/api/characters/2")) }
 
+        Thread.sleep(2000)
 
-        Thread.sleep(1000)
-
-        Espresso.onView(ViewMatchers.withText("Book : Test"))
+        Espresso.onView(ViewMatchers.withText("Book : A Game of Thrones"))
             .check(matches(isDisplayed()))
 
     }
