@@ -55,7 +55,9 @@ class NavigationListTest {
         onView(withId(R.id.recyclerView))
             .check(matches(isDisplayed()))
 
+        Thread.sleep(1000)
         onView(withText("A Game of Thrones")).check(matches(isDisplayed()))
+        Thread.sleep(1000)
 
 
     }

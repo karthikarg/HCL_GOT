@@ -2,6 +2,12 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
+      <entry key="All Tests">
+        <State />
+      </entry>
+      <entry key="CheckLeftListItemCheck()">
+        <State />
+      </entry>
       <entry key="app">
         <State>
           <targetSelectedWithDropDown>
@@ -18,19 +24,13 @@
           <timeTargetWasSelectedWithDropDown value="2024-03-02T19:18:31.561815800Z" />
         </State>
       </entry>
+      <entry key="bookNameTextviewVisibilityCheck()">
+        <State />
+      </entry>
+      <entry key="bookNametextviewVisibilityCheck()">
+        <State />
+      </entry>
       <entry key="checkProgressBarVisibilityCheck()">
-        <State />
-      </entry>
-      <entry key="leftDrawerVisibilityCheck()">
-        <State />
-      </entry>
-      <entry key="testLiveDataObservers()">
-        <State />
-      </entry>
-      <entry key="testUpdateCharsView()">
-        <State />
-      </entry>
-      <entry key="testViewVisible()">
         <State />
       </entry>
     </value>

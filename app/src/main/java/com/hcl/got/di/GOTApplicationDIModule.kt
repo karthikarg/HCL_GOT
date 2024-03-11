@@ -7,6 +7,8 @@ import com.hcl.got.GOTApplication
 import com.hcl.got.data.api.GOTApiHelper
 import com.hcl.got.data.api.GOTApiHelperImpl
 import com.hcl.got.data.api.GOTApiService
+import com.hcl.got.utils.AppConstants.BASE_URL
+import com.hcl.got.utils.AppConstants.cacheSize
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -19,10 +21,8 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-class GOTApplicationModule {
+class GOTApplicationDIModule {
 
-    val BASE_URL = "https://www.anapioficeandfire.com/api/"
-    val cacheSize = (5 * 1024 * 1024).toLong()
 
     @Provides
     fun provideBaseUrl() =  BASE_URL

@@ -7,7 +7,7 @@ import com.hcl.got.MockResponseFileReader
 import com.hcl.got.data.api.GOTApiService
 import com.hcl.got.data.model.BooksData
 import com.hcl.got.repos.GOTRepository
-import com.hcl.got.ui.activity.viewmodels.GOTBooksViewModel
+import com.hcl.got.ui.viewmodels.GOTBooksViewModel
 import com.hcl.got.utils.Status
 import junit.framework.TestCase.assertEquals
 import kotlinx.coroutines.Dispatchers

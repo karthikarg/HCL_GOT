@@ -4,7 +4,7 @@ import android.content.Context
 import android.net.ConnectivityManager
 import android.net.Network
 import android.net.NetworkCapabilities
-import com.hcl.got.di.GOTApplicationModule
+import com.hcl.got.di.GOTApplicationDIModule
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
@@ -32,7 +32,7 @@ class GOTApplicationModuleTest {
 
     @Test
     fun testProvideBaseUrl() {
-        val module = GOTApplicationModule()
+        val module = GOTApplicationDIModule()
         val baseUrl = module.provideBaseUrl()
         assertEquals("https://www.anapioficeandfire.com/api/", baseUrl)
     }
@@ -45,7 +45,7 @@ class GOTApplicationModuleTest {
         `when`(networkCapabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)).thenReturn(true)
         `when`(context.getSystemService(Context.CONNECTIVITY_SERVICE)).thenReturn(connectivityManager)
 
-        val module = GOTApplicationModule()
+        val module = GOTApplicationDIModule()
         assertTrue(module.hasNetwork(context))
     }
 
@@ -55,7 +55,7 @@ class GOTApplicationModuleTest {
         `when`(connectivityManager.activeNetwork).thenReturn(null)
         `when`(context.getSystemService(Context.CONNECTIVITY_SERVICE)).thenReturn(connectivityManager)
 
-        val module = GOTApplicationModule()
+        val module = GOTApplicationDIModule()
         assertFalse(module.hasNetwork(context))
     }
 }

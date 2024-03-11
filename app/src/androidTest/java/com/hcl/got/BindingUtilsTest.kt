@@ -10,28 +10,29 @@ import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
 class BindingUtilsTest {
-
+    // Test case for setVisibility() method when the value is not empty
     @Test
     fun testSetVisibility_WhenValueNotEmpty() {
-        // Arrange
+        // Set up the test environment
         val view = View(ApplicationProvider.getApplicationContext())
 
-        // Act
+        // Call the setVisibility() method with a non-empty string
         BindingUtils.setVisibility(view, "Some non-empty string")
 
-        // Assert
+        // Verify that the visibility of the view is set to VISIBLE
         assertEquals(View.VISIBLE, view.visibility)
     }
 
+    // Test case for setVisibility() method when the value is empty
     @Test
     fun testSetVisibility_WhenValueEmpty() {
-        // Arrange
+        // Set up the test environment
         val view = View(ApplicationProvider.getApplicationContext())
 
-        // Act
+        // Call the setVisibility() method with an empty string
         BindingUtils.setVisibility(view, "")
 
-        // Assert
+        // Verify that the visibility of the view is set to GONE
         assertEquals(View.GONE, view.visibility)
     }
 }

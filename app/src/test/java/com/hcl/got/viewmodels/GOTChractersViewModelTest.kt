@@ -5,10 +5,9 @@ import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
 import com.hcl.got.MockResponseFileReader
 import com.hcl.got.data.api.GOTApiService
-import com.hcl.got.data.model.BooksData
 import com.hcl.got.data.model.CharactersData
 import com.hcl.got.repos.GOTRepository
-import com.hcl.got.ui.characters.CharactersViewModel
+import com.hcl.got.ui.viewmodels.CharactersViewModel
 import com.hcl.got.utils.Status
 import junit.framework.TestCase.assertEquals
 import kotlinx.coroutines.Dispatchers
@@ -16,7 +15,6 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.runBlockingTest
 import kotlinx.coroutines.test.setMain
-import okhttp3.ResponseBody
 import okhttp3.ResponseBody.Companion.toResponseBody
 import org.junit.After
 import org.junit.Before
@@ -25,7 +23,6 @@ import org.junit.Test
 import org.mockito.Mockito.mock
 import org.mockito.Mockito.`when`
 import org.mockito.MockitoAnnotations
-import retrofit2.Call
 import retrofit2.Response
 
 

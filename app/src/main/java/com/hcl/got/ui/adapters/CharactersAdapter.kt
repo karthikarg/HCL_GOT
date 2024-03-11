@@ -1,4 +1,4 @@
-package com.hcl.got.ui.characters
+package com.hcl.got.ui.adapters
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView

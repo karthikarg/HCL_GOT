@@ -1,4 +1,4 @@
-package com.hcl.got.ui.characters
+package com.hcl.got.ui.viewmodels
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -17,6 +17,11 @@ import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 
+/**
+ * ViewModel class responsible for providing data related to Game of Thrones characters to the UI.
+ * This class is annotated with @HiltViewModel to allow for dependency injection using Hilt.
+ * @param gotRepository The repository responsible for fetching data related to Game of Thrones characters.
+ */
 @HiltViewModel
 class CharactersViewModel @Inject constructor(val gotRepository: GOTRepository) : ViewModel() {
 
@@ -25,11 +30,19 @@ class CharactersViewModel @Inject constructor(val gotRepository: GOTRepository) 
     val charactersDataLiveData: LiveData<Resource<List<CharactersData>>> = _charactersDataLiveData
 
 
+    /**
+     * Sets the list of character URLs.
+     * @param list The list of character URLs to set.
+     */
     fun setUrlList(list : List<String>){
         charactersUrlList = list
 
     }
 
+    /**
+     * Retrieves the list of character URLs.
+     * @return The list of character URLs.
+     */
     fun getUrlList() : List<String> {
         return charactersUrlList
     }

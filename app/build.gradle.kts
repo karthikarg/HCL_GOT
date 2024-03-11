@@ -3,7 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     kotlin("kapt")
     id("com.google.dagger.hilt.android")
-
+    id("jacoco")
 }
 
 android {
@@ -54,6 +54,8 @@ android {
         dataBinding = true
     }
 
+
+
     sourceSets {
         getByName("test") {
             java.srcDir("src/test/java")
@@ -67,10 +69,10 @@ android {
         unitTests.isReturnDefaultValues = true
         unitTests.isIncludeAndroidResources = true
         animationsDisabled = true
-
     }
 
 }
+
 
 
 // Allow references to generated code
@@ -107,7 +109,7 @@ dependencies {
 
 
 
-// coroutine
+    // coroutine
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
 
